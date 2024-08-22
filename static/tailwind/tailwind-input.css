@@ -1,3 +1,45 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer base {
+  .custom-container {
+    max-width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@layer components {
+  .button-primary {
+    max-width: 100px;
+    background-color: #f3ebff;
+    color: #6941c6;
+  }
+
+  .text-primary-light-color {
+    color: #6941c6;
+  }
+
+  .big-text-title {
+    font-weight: bold;
+    color: #42307d;
+    font-size: 2rem;
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .post-category {
+    font-size: 0.875rem;
+    font-weight: bold;
+    @apply text-primary-light-color;
+  }
+
+  .post-description {
+    font-size: 1rem;
+    color: #667085;
+  }
+}

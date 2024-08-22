@@ -1,4 +1,62 @@
-{% extends 'base.html'%} {% block content %}
-<h1 class="text-green-600 text-3xl">HOMEPAGE</h1>
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="homepage | flex-grow bg-[#f3ebff] py-[2rem]">
+  <div class="homepage-inner |">
+    <div class="homepage-container | custom-container min-h-[100%] px-[0.8rem]">
+      <div
+        class="posts | grid grid-cols-1 gap-[1rem] sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {% for post in posts %}
+        <div class="post-item | bg-white p-[1.25rem]">
+          <div class="post-inner |">
+            <div
+              class="product-container | flex flex-col gap-[1rem] flex-grow h-full"
+            >
+              <!-- NEED TO MAKE IMAGES DYNAMIC -->
+              <div
+                class="product-image-block | min-h-[12rem] w-full bg-center bg-cover"
+                style="background-image: url('{{ post.image.url }}')"
+              ></div>
+              <div
+                class="post-body | flex flex-col gap-[1rem] flex-grow h-full justify-between"
+              >
+                <p class="post-category |">{{ post.get_category_display }}</p>
+                <div class="post-title-block |">
+                  <a class="flex gap-[1rem]" href="{% url 'post' post.id %}">
+                    <div class="post-title | flex items-center">
+                      {{ post.title }}
+                    </div>
+                    <div class="post-title-link | flex items-center">
+                      <img
+                        class="w-[1.1rem] h-[1.1rem]"
+                        src="{% static 'assets/icons/arrow-link-icon.svg' %}"
+                        alt="link-arrow"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <p class="post-description |">{{ post.description }}</p>
+                <a href="{% url 'author' post.author.id %}">
+                  <div class="post-author-block | flex gap-[1rem]">
+                    <div
+                      class="author-image | min-h-[3rem] min-w-[3rem] bg-[url('/media/author_images/user_photo.jpg')] bg-center bg-cover rounded-3xl"
+                    ></div>
+                    <div class="post-info | text-[0.875rem]">
+                      <p class="author-name |">Lana Steiner</p>
+                      <p class="publication-date | text-[#667085]">
+                        18 June 2024
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

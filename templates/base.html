@@ -7,6 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    {% include 'navbar.html' %} {% block content %} {% endblock %}
+    <div class="main-layout | min-h-[100vh] flex flex-col justify-between">
+      {% include 'navbar.html' %} {% block content %} {% endblock content %}
+      <footer class="footer | bg-[#F9F5FF] py-[1.25rem]">
+        <div class="footer-inner | text-center">
+          <div class="footer-container | custom-container">
+            <p class="text-[0.625rem] text-[#667085]">
+              © Copyright 2024. All right reserved. Revolace
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

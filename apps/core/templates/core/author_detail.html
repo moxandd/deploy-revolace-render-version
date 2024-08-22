@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="author | flex-grow py-[1.5rem]">
+  <div class="author-inner |">
+    <div class="author-container | custom-container p-[1rem]">
+      <div class="author-content | flex flex-col gap-[1rem]">
+        <div
+          class="author-image-block | min-h-[17rem] w-full bg-center bg-cover sm:min-h-[27rem] lg:min-h-[35rem]"
+          style="background-image: url('{{ author.image.url }}')"
+        ></div>
+        <div class="author-info-block |">
+          <div class="aurhor-name | flex flex-col items-center">
+            <h1 class="post-title">
+              {{ author.first_name }} {{ author.last_name }}
+            </h1>
+            <p class="text-[#596277]">{{ author.age }} y.o</p>
+            <p class="text-[#596277]">{{ author.profession }}</p>
+          </div>
+        </div>
+        <div class="author-about-text |">
+          <p class="text-justify">{{ author.bio }}</p>
+        </div>
+        <h1 class="author-posts-title | post-title text-center">
+          {{ author.first_name}}'s posts
+        </h1>
+        <div class="author-posts-full-table | flex md:flex-col gap-[2rem]">
+          <hr />
+          <div
+            class="author-posts-columns-names | hidden md:grid md:grid-cols-3"
+          >
+            <h1 class="post-title text-[1rem]">Post title</h1>
+            <h1 class="post-title text-[1rem] md:text-center">View count</h1>
+            <h1 class="post-title text-[1rem] md:text-right">
+              Publication date
+            </h1>
+          </div>
+          <ul class="author-posts | ml-[-6%] w-full flex flex-col gap-[1rem] md:gap-[0.5rem] md:w-auto sm:ml-[-4%] md:ml-0">
+            {% for post in author.post_set.all %}
+            <hr class="md:hidden">
+            <div class="author-post-mobile-item | flex justify-between gap-[3rem] md:block">
+              <div class="author-posts-columns-names | md:hidden">
+                <h1 class="post-title text-[1rem]">Post title</h1>
+                <h1 class="post-title text-[1rem] md:text-center">
+                  View count
+                </h1>
+                <h1 class="post-title text-[1rem] md:text-right">
+                  Publication date
+                </h1>
+              </div>
+              <div>
+                <a href="{% url 'post' post.id %}"
+                  ><li class="author-post-item | grid md:grid-cols-3">
+                    <h4 class=" text-right underline md:text-left">{{ post.title }}</h4>
+                    <p class="text-right md:text-center">{{ post.views }}</p>
+                    <p class="text-right">{{ post.publication_date }}</p>
+                  </li></a
+                >
+              </div>
+              </div>
+           
+              {% endfor %}
+            </div>
+          </ul>
+
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

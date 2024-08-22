@@ -1,3 +1,28 @@
 <nav>
-    <h1 class="text-orange-500">This is navbar</h1>
+  <div class="navbar | bg-[#F9F5FF]">
+    <div class="navbar-inner |">
+      <div class="navbar-container | custom-container py-[3rem]">
+        <div
+          class="navbar-content | flex flex-col gap-[0.4rem] text-center items-center max-w-[90%] mx-auto"
+        >
+          <a
+            class="button-primary | text-[0.875rem] rounded-lg py-[0.1rem] px-[0.5rem]"
+            href="#"
+            >Pricing plans</a
+          >
+          <a href="{% url 'home' %}"
+            ><h1 class="big-text-title |">Revolace</h1></a
+          >
+          <p class="subtitles-text | text-primary-light-color text-[1.125rem]">
+            The latest industry news, interviews, technologies, and resources.
+          </p>
+          <input
+            class="searchbar | border-[#D0D5DD] border-[1px] rounded-lg p-[0.5rem] w-full mt-[1.5rem]"
+            type="search"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
