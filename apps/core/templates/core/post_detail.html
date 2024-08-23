@@ -13,8 +13,9 @@
             <h1>{{ post.title }}</h1>
           </div>
         </div>
-        <p class="post-text | text-justify text-[#667085] leading-6">
-          {{post.text}}
+
+        <p class="post-text | text-justify text-[#d6d8dd] leading-6">
+          {{post.text|linebreaks}}
         </p>
         <a href="{% url 'author' post.author.id %}">
           <div class="post-author-block | flex gap-[1rem]">

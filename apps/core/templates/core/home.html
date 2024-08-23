@@ -58,5 +58,29 @@
     </div>
   </div>
 </div>
+<div class="pagination | bg-[#b858b855] flex justify-center py-[1rem]">
+  <span class="step-links | flex flex-col text-center">
+    <span class="current">
+      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+    {% if page_obj.has_previous %}
+    <div class="next-previous-links | flex gap-[1.5rem]">
+      <a class="underline" href="?page=1">First page</a>
+      <a class="underline" href="?page={{ page_obj.previous_page_number }}"
+        >Previous page</a
+      >
+    </div>
+    {% endif %} {% if page_obj.has_next %}
+    <div class="next-previous-links | flex gap-[1.5rem]">
+      <a class="underline" href="?page={{ page_obj.paginator.num_pages }}"
+        >Previous page</a
+      >
+      <a class="underline" href="?page={{ page_obj.next_page_number }}"
+        >Next page</a
+      >
+    </div>
+    {% endif %}
+  </span>
+</div>
 
 {% endblock %}

@@ -16,11 +16,21 @@
           <p class="subtitles-text | text-primary-light-color text-[1.125rem]">
             The latest industry news, interviews, technologies, and resources.
           </p>
-          <input
-            class="searchbar | border-[#D0D5DD] border-[1px] rounded-lg p-[0.5rem] w-full mt-[1.5rem]"
-            type="search"
-            placeholder="Search"
-          />
+          <form method="GET" action="{% url 'home' %}">
+            {% csrf_token %}
+            <input
+              class="searchbar | border-[#D0D5DD] border-[1px] rounded-lg p-[0.5rem] w-full mt-[1.5rem]"
+              type="search"
+              name="q"
+              placeholder="Post title"
+            />
+            <button
+              class="border-2 border-gray-600 px-[4.25rem] py-[0.3rem] rounded-lg mt-[0.8rem]"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
         </div>
       </div>
     </div>

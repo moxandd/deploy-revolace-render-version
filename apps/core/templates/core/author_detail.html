@@ -17,13 +17,15 @@
             <p class="text-[#596277]">{{ author.profession }}</p>
           </div>
         </div>
-        <div class="author-about-text |">
-          <p class="text-justify">{{ author.bio }}</p>
-        </div>
+
+        <p class="text-justify leading-6">{{ author.bio|linebreaks }}</p>
+
         <h1 class="author-posts-title | post-title text-center">
           {{ author.first_name}}'s posts
         </h1>
-        <div class="author-posts-full-table | flex md:flex-col gap-[2rem]">
+        <div
+          class="author-posts-full-table | flex flex-col md:flex-col gap-[2rem] overflow-hidden"
+        >
           <hr />
           <div
             class="author-posts-columns-names | hidden md:grid md:grid-cols-3"
@@ -34,10 +36,14 @@
               Publication date
             </h1>
           </div>
-          <ul class="author-posts | ml-[-6%] w-full flex flex-col gap-[1rem] md:gap-[0.5rem] md:w-auto sm:ml-[-4%] md:ml-0">
+          <ul
+            class="author-posts | w-full flex flex-col gap-[1rem] md:gap-[0.5rem] md:w-auto md:ml-0"
+          >
             {% for post in author.post_set.all %}
-            <hr class="md:hidden">
-            <div class="author-post-mobile-item | flex justify-between gap-[3rem] md:block">
+            <hr class="md:hidden" />
+            <div
+              class="author-post-mobile-item | flex justify-between gap-[3rem] md:block"
+            >
               <div class="author-posts-columns-names | md:hidden">
                 <h1 class="post-title text-[1rem]">Post title</h1>
                 <h1 class="post-title text-[1rem] md:text-center">
@@ -50,16 +56,16 @@
               <div>
                 <a href="{% url 'post' post.id %}"
                   ><li class="author-post-item | grid md:grid-cols-3">
-                    <h4 class=" text-right underline md:text-left">{{ post.title }}</h4>
+                    <h4 class="text-right underline md:text-left">
+                      {{ post.title }}
+                    </h4>
                     <p class="text-right md:text-center">{{ post.views }}</p>
                     <p class="text-right">{{ post.publication_date }}</p>
                   </li></a
                 >
               </div>
-              </div>
-           
-              {% endfor %}
             </div>
+            {% endfor %}
           </ul>
 
           <hr />
