@@ -10,6 +10,7 @@ Revolace is a full-stack web application built by Danil Kazakov (moxandd) to sho
 
 - **Dynamic models for posts, users:** Utilizing Database to provide data for rendering all the information on frontend site, no hardcoded values.
 - **Simple Post Search by Titles:** Quickly find posts with the filetering by a title.
+- **Dynamic view count on posts:** Everytime a user (you) visits a post, it's view count increases.
 - **Responsive Design:** Seamlessly adapts to different screen sizes using Tailwind CSS, providing an optimal experience on desktop, tablet, and mobile devices.
 
 ## Technologies Used
