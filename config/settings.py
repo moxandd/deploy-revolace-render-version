@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from os import getenv
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p!74c#&x2*i@%wzxl^wiei1yrrh78ux180=tu@1+&cili*6(@6'
+SECRET_KEY = config("DJANGO_SECRET_KEY", cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DJANGO_DEBUG", cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,23 +83,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'revolace-project',
-    'USER': 'danya-kazakov-96',
-    'PASSWORD': 'zJX3SgVBFK1N',
-    'HOST': 'ep-muddy-pine-a2o4klwb.eu-central-1.aws.neon.tech',
-    'PORT':'5432' ,
+    'NAME': config("DB_NAME", cast=str),
+    'USER': config("DB_USER", cast=str),
+    'PASSWORD': config("DB_PASSWORD", cast=str),
+    'HOST': config("DB_HOST", cast=str),
+    'PORT': config("DB_PORT", cast=str), # default is 5432
     'OPTIONS': {
       'sslmode': 'require',
     },
   }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation
