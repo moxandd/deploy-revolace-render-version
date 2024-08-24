@@ -38,10 +38,13 @@
                 <a href="{% url 'author' post.author.id %}">
                   <div class="post-author-block | flex gap-[1rem]">
                     <div
-                      class="author-image | min-h-[3rem] min-w-[3rem] bg-[url('/media/author_images/user_photo.jpg')] bg-center bg-cover rounded-3xl"
+                      class="author-image | min-h-[3rem] min-w-[3rem] bg-center bg-cover rounded-3xl"
+                      style="background-image: url('{{ post.author.image.url }}')"
                     ></div>
                     <div class="post-info | text-[0.875rem]">
-                      <p class="author-name |">Lana Steiner</p>
+                      <p class="author-name |">
+                        {{ post.author.first_name }} {{ post.author.last_name }}
+                      </p>
                       <p class="publication-date | text-[#667085]">
                         18 June 2024
                       </p>

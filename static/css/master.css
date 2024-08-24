@@ -601,10 +601,6 @@ video {
   margin-right: auto;
 }
 
-.ml-\[-6\%\] {
-  margin-left: -6%;
-}
-
 .mt-\[0\.8rem\] {
   margin-top: 0.8rem;
 }
@@ -701,6 +697,10 @@ video {
   gap: 0.4rem;
 }
 
+.gap-\[1\.5rem\] {
+  gap: 1.5rem;
+}
+
 .gap-\[1rem\] {
   gap: 1rem;
 }
@@ -711,10 +711,6 @@ video {
 
 .gap-\[3rem\] {
   gap: 3rem;
-}
-
-.gap-\[1\.5rem\] {
-  gap: 1.5rem;
 }
 
 .overflow-hidden {
@@ -752,6 +748,10 @@ video {
   background-color: rgb(249 245 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#b858b855\] {
+  background-color: #b858b855;
+}
+
 .bg-\[\#f3ebff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(243 235 255 / var(--tw-bg-opacity));
@@ -760,10 +760,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#b858b855\] {
-  background-color: #b858b855;
 }
 
 .bg-\[url\(\'\/media\/author_images\/user_photo\.jpg\'\)\] {
@@ -825,6 +821,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-\[1rem\] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-\[2rem\] {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -835,9 +836,19 @@ video {
   padding-bottom: 3rem;
 }
 
-.py-\[1rem\] {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.px-\[1\.5rem\] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-\[1rem\] {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-\[0\.25rem\] {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .text-center {
@@ -882,24 +893,9 @@ video {
   color: rgb(102 112 133 / var(--tw-text-opacity));
 }
 
-.text-\[\#764cbf\] {
-  --tw-text-opacity: 1;
-  color: rgb(118 76 191 / var(--tw-text-opacity));
-}
-
 .text-\[\#d6d8dd\] {
   --tw-text-opacity: 1;
   color: rgb(214 216 221 / var(--tw-text-opacity));
-}
-
-.text-\[\#83849a\] {
-  --tw-text-opacity: 1;
-  color: rgb(131 132 154 / var(--tw-text-opacity));
-}
-
-.text-\[\#5d5f73\] {
-  --tw-text-opacity: 1;
-  color: rgb(93 95 115 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -907,10 +903,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:ml-\[-4\%\] {
-    margin-left: -4%;
-  }
-
   .sm\:min-h-\[27rem\] {
     min-height: 27rem;
   }
