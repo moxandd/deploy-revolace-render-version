@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "tailwindcss -i static/tailwind/tailwind-input.css -o static/css/master.css --watch"
+    "dev": "tailwindcss -i static/tailwind/tailwind-input.css -o static/css/master.css --watch",
+    "build-css": "tailwindcss -i static/tailwind/tailwind-input.css -o static/css/master.css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.10"
