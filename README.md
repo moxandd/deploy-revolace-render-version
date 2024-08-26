@@ -31,7 +31,13 @@ Revolace is a full-stack web application built by Danil Kazakov (moxandd) to sho
 
 - **Python 3.10 - Python 3.12:**
 
-Type and run the follwoing commands in the terminal:
+Using Docker:
+
+1. `docker build -f Dockerfile -t revolace .`
+
+2. `docker run --env-file .env -p 8001:8000 --rm --name revolace-dev -it revolace`
+
+Or manually type and run the follwoing commands in the terminal:
 
 1. `python -m venv .venv`
 
