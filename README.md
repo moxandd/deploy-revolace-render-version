@@ -29,7 +29,11 @@ Revolace is a full-stack web application built by Danil Kazakov (moxandd) to sho
 
 **Prerequisites**
 
+Create .env file and put information there accordingly to the .env_example file.
+
 - **Python 3.10 - Python 3.12:**
+
+After you create the .env file and put all neccessary information there, you can launch it yourself.But note that there is not gonna be any data in your database, you can create your own instances of the models using Django Admin Panel.
 
 Using Docker:
 
