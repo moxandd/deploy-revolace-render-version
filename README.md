@@ -41,6 +41,8 @@ Using Docker:
 
 2. `docker run --env-file .env -p 8001:8000 --rm --name revolace-dev -it revolace`
 
+!IMPORTANT: THE SERVER IS GONNA RUN ON "localhost:8001" = "http://127.0.0.1:8001/"
+
 Or manually type and run the follwoing commands in the terminal:
 
 1. `python -m venv .venv`
